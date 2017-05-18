@@ -2,6 +2,16 @@
 
 The goal of chromVARmotifs is to make it easy to use several different motif collections in R, particularly for use with motifmatchr and chromVAR packages.  Motifs are stored as PWMatrixList objects (object from TFBSTools package).  
 
+## Installation
+
+Installation is easiest using the devtools package. The function `install_github` will install the package.
+
+``` r
+devtools::install_github("GreenleafLab/chromVARmotifs")
+```
+
+The TFBSTools package from Bioconductor is the only direct dependency; the PWMatrixList object from that package is used to store the motifs.
+
 ## Motif collections included:
 
 ``` r
