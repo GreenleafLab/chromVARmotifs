@@ -40,6 +40,37 @@ NULL
 #' data(mouse_pwms_v1)
 NULL
 
+
+#' human_pwms_v2
+#'
+#' Collection of human pwms filtered from version 1
+#' @docType data
+#' @keywords datasets
+#' @name human_pwms_v2
+#' @details These motifs were curated from the cisBP database. Position
+#' frequency matrices were converted to PWMs by taking the log
+#' of the frequencies (after adding a pseudocount of 0.008) divided by 0.25.
+#' @usage data(human_pwms_v1)
+#' @return \code{\link[TFBSTools]{XMatrixList}} of length 870
+#' @examples
+#' data(human_pwms_v2)
+NULL
+
+#' mouse_pwms_v2
+#'
+#' Collection of mouse pwms filtered from version 1
+#' @details These motifs were curated from the cisBP database. Position
+#' frequency matrices were converted to PWMs by taking the log
+#' of the frequencies (after adding a pseudocount of 0.008) divided by 0.25.
+#' @docType data
+#' @keywords datasets
+#' @name mouse_pwms_v2
+#' @usage data(mouse_pwms_v2)
+#' @return \code{\link[TFBSTools]{XMatrixList}} of length 884
+#' @examples
+#' data(mouse_pwms_v2)
+NULL
+
 #' encode_pwms
 #'
 #' Collection of motifs from ENCODE project
