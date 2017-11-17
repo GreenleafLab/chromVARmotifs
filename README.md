@@ -17,8 +17,34 @@ The TFBSTools package from Bioconductor is the only direct dependency; the PWMat
 ``` r
 data("human_pwms_v1") #curated collection of human motifs from cisBP database
 data("mouse_pwms_v1") #curated collection of mouse motifs from cisBP database
+data("human_pwms_v2") #filtered collection of human motifs from cisBP database
+data("mouse_pwms_v2") #filtered collection of mouse motifs from cisBP database
 data("homer_pwms") #motifs from HOMER
 data("encode_pwms") #motifs from ENCODE
+```
+
+## Version 2
+
+The script used to make the "version 2" motifs (curated from the large master list for 
+less redundancy) is shown below:
+
+
+```r
+library(chromVARmotifs)
+library(dplyr)
+library(tidyr)
+library(data.table)
+data("human_pwms_v1")
+data("mouse_pwms_v1")
+
+sout <- sapply(strsplit(names(human_pwms_v1), split = "_"), function(s) c(s[3]))
+human_pwms_v2 <- human_pwms_v1[match(unique(sout), sout)]
+
+sout <- sapply(strsplit(names(mouse_pwms_v1), split = "_"), function(s) c(s[3]))
+mouse_pwms_v2 <- mouse_pwms_v1[match(unique(sout), sout)]
+
+save(human_pwms_v2, file = 'human_pwms_v2.rda')
+save(mouse_pwms_v2,  file = 'mouse_pwms_v2.rda')
 ```
 
 ## Conversion to PWM
@@ -40,6 +66,6 @@ We curated the motifs from the cisBP database to ensure each TF regulator was re
 `human_pwms_v1` and `mouse_pwms_v1` are based on http://cisbp.ccbr.utoronto.ca/
 
 
-
+<br><br>
 
 
